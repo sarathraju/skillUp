@@ -1,5 +1,5 @@
 # Your Project's Title...
-Your project's description...
+Skill Up Session sample
 
 ## Environments
 - Preview: https://main--{repo}--{owner}.aem.page/
