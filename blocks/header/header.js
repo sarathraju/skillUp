@@ -138,6 +138,20 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // Replace with icon-style logo loading
+  const navBrandPicture = navBrand.querySelector('picture');
+  if (navBrandPicture) {
+    // Create new img element for logo icon
+    const logoImg = document.createElement('img');
+    logoImg.className = 'icon icon-frescopa-logo';
+    logoImg.src = '/icons/frescopa_logo.svg';
+    logoImg.alt = 'Skill Up';
+    logoImg.loading = 'eager';
+    
+    // Replace picture element with img
+    navBrandPicture.replaceWith(logoImg);
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
