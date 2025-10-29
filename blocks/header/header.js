@@ -115,6 +115,12 @@ export default async function decorate(block) {
 
   // decorate nav DOM
   block.textContent = '';
+  
+  // Create welcome bar
+  const welcomeBar = document.createElement('div');
+  welcomeBar.className = 'welcome-bar';
+  welcomeBar.textContent = 'WELCOME TO AEM SKILL UP SYDNEY';
+  
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
@@ -162,5 +168,8 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+  
+  // Append welcome bar first, then nav wrapper
+  block.append(welcomeBar);
   block.append(navWrapper);
 }
